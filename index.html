@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor - Quran for Couples | Grow Closer to Allah, Together</title>
+    <meta name="description"
+        content="The first daily Quran companion designed for Muslim couples. Read together, reflect together, grow together. Join thousands of couples strengthening their marriage through shared faith.">
+    <meta name="keywords" content="Quran app, Muslim couples, Islamic marriage, couples devotional, Muslim app, Quran reading">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Noor - Quran for Couples">
+    <meta property="og:description" content="Grow closer to Allah and each other. The daily Quran companion designed for Muslim couples.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trynoor.xyz">
+    <meta property="og:image" content="https://trynoor.xyz/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        gold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        },
+                        'emerald-350': '#50e3a4',
+                        'emerald-450': '#2eb87d',
+                        'emerald-550': '#08885a',
+                        'emerald-650': '#066645'
+                    },
+                    fontFamily: {
+                        'arabic': ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #065f46 100%);
+        }
+
+        .glow {
+            box-shadow: 0 0 80px rgba(52, 211, 153, 0.4);
+        }
+
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .phone-mockup {
+            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+            border-radius: 3rem;
+            padding: 12px;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-screen {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .verse-card {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .cta-gradient {
+            background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+    </style>
+</head>
+
+<body class="antialiased text-gray-900 bg-white overflow-x-hidden">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="logo-40.png" alt="Noor" class="w-8 h-8 rounded-lg">
+                <span class="text-xl font-bold tracking-tight">Noor</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                <a href="#how-it-works" class="hover:text-gray-900 transition-colors">How It Works</a>
+                <a href="#features" class="hover:text-gray-900 transition-colors">Features</a>
+                <a href="#testimonials" class="hover:text-gray-900 transition-colors">Stories</a>
+                <a href="#faq" class="hover:text-gray-900 transition-colors">FAQ</a>
+            </div>
+            <a href="#download"
+                class="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-emerald-800 rounded-full hover:bg-emerald-900 transition-all shadow-lg shadow-emerald-900/20">
+                Download Free
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-gradient pattern-overlay relative min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-emerald-400/30 text-emerald-400">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    <span>Trusted by 2,000+ Muslim Couples</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-emerald-300">
+                    Grow closer to Allah,<br>
+                    <span class="text-gold-300">together.</span>
+                </h1>
+
+                <p class="text-xl text-emerald-400 leading-relaxed max-w-lg">
+                    In the rush of daily life, spiritual connection often fades. Noor brings you and your spouse back together —
+                    one verse at a time, every single day.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#download"
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-emerald-950 bg-emerald-400 rounded-2xl hover:bg-emerald-300 transition-all shadow-xl shadow-emerald-900/30">
+                        <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.035 18.337c-.556.814-1.156 1.638-1.956 1.638-.79 0-1.077-.47-2.022-.47-.966 0-1.255.454-2.044.47-.845.016-1.467-.837-2.011-1.637-1.1-1.578-1.934-4.506-1.934-7.234 0-4.075 2.535-6.22 5.06-6.22 1.346 0 2.29.91 3.013.91.689 0 2.012-.955 3.39-.81 1.156.09 3.658 1.077 3.658 1.077s-.767 2.19-2.224 3.936c-1.345 1.6-2.5 3.514-2.5 5.56 0 1.956 1.256 3.524 1.256 3.524zm-4.047-15.688c.611-.745 1.023-1.78 1.023-2.65 0-.133-.011-.266-.033-.388-1.59.066-2.48.866-2.902 1.366-.467.545-.878 1.5-.878 2.457 0 .155.022.289.044.4 1.1-.09 1.978-.656 2.744-1.185z" />
+                        </svg>
+                        Download on App Store
+                    </a>
+                    <a href="#how-it-works"
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-emerald-400 border-2 border-emerald-500/40 rounded-2xl hover:bg-emerald-500/20 transition-all">
+                        See How It Works
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-6 pt-4">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 border-2 border-emerald-300 flex items-center justify-center text-sm text-emerald-950 font-semibold">A</div>
+                        <div class="w-10 h-10 rounded-full bg-emerald-400 border-2 border-emerald-300 flex items-center justify-center text-sm text-emerald-950 font-semibold">F</div>
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 border-2 border-emerald-300 flex items-center justify-center text-sm text-emerald-200 font-semibold">S</div>
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 border-2 border-emerald-300 flex items-center justify-center text-sm text-emerald-950 font-semibold">M</div>
+                    </div>
+                    <div class="text-sm text-emerald-500">
+                        <div class="flex items-center gap-1 text-gold-400">
+                            ★★★★★ <span class="text-emerald-300 font-semibold">4.9</span>
+                        </div>
+                        <span>from 500+ reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Mockup -->
+            <div class="relative lg:ml-auto float-animation">
+                <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/40 to-emerald-400/30 rounded-full blur-3xl opacity-60 w-full h-full transform scale-125"></div>
+                <div class="phone-mockup relative w-[280px] sm:w-[320px] mx-auto glow">
+                    <div class="phone-screen h-[560px] sm:h-[640px]">
+                        <!-- Status Bar -->
+                        <div class="bg-white px-6 py-3 flex justify-between items-center text-xs text-gray-500">
+                            <span>9:41</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3C8.5 3 5.5 4.6 3.5 7.1L12 21l8.5-13.9C18.5 4.6 15.5 3 12 3z"/></svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg>
+                            </div>
+                        </div>
+
+                        <!-- App Header -->
+                        <div class="bg-white px-5 py-4 border-b border-gray-100">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wide">Today's Reading</p>
+                                    <h3 class="text-lg font-bold text-gray-900">Al-Baqarah</h3>
+                                </div>
+                                <div class="flex items-center gap-2 bg-gradient-to-r from-orange-100 to-amber-100 px-3 py-1.5 rounded-full">
+                                    <span class="text-base">🔥</span>
+                                    <span class="text-sm font-bold text-orange-600">12 Days</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Verse Card -->
+                        <div class="p-5">
+                            <div class="verse-card rounded-2xl p-5 mb-4">
+                                <p class="font-arabic text-right text-xl leading-loose text-emerald-900 mb-4" dir="rtl">
+                                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+                                </p>
+                                <p class="text-sm text-emerald-700 leading-relaxed">
+                                    "And of His signs is that He created for you from yourselves mates..."
+                                </p>
+                                <p class="text-xs text-emerald-800 mt-2 font-medium">Ar-Rum 30:21</p>
+                            </div>
+
+                            <!-- Partner Status -->
+                            <div class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold">S</div>
+                                        <div>
+                                            <p class="font-semibold text-gray-900">Sarah</p>
+                                            <p class="text-xs text-emerald-700 font-medium">✓ Read today</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-2xl">💚</div>
+                                </div>
+                            </div>
+
+                            <!-- Reflection Prompt -->
+                            <div class="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-100">
+                                <p class="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-1">Today's Reflection</p>
+                                <p class="text-sm text-gray-700">"What's one way your partner brings you closer to Allah?"</p>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Nav Hint -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-8 py-4 rounded-b-[2.5rem]">
+                            <div class="flex justify-around text-gray-400">
+                                <div class="text-emerald-600 text-center">
+                                    <svg class="w-6 h-6 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    <span class="text-xs">Today</span>
+                                </div>
+                                <div class="text-center">
+                                    <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                    <span class="text-xs">Journey</span>
+                                </div>
+                                <div class="text-center">
+                                    <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <span class="text-xs">Settings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Social Proof Bar -->
+    <section class="bg-gray-50 py-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-center">
+                <div>
+                    <p class="text-3xl font-bold text-gray-900">2,000+</p>
+                    <p class="text-sm text-gray-500">Couples Connected</p>
+                </div>
+                <div class="hidden sm:block w-px h-12 bg-gray-200"></div>
+                <div>
+                    <p class="text-3xl font-bold text-gray-900">50,000+</p>
+                    <p class="text-sm text-gray-500">Verses Read Together</p>
+                </div>
+                <div class="hidden sm:block w-px h-12 bg-gray-200"></div>
+                <div>
+                    <p class="text-3xl font-bold text-gray-900">4.9 ★</p>
+                    <p class="text-sm text-gray-500">App Store Rating</p>
+                </div>
+                <div class="hidden sm:block w-px h-12 bg-gray-200"></div>
+                <div>
+                    <p class="text-3xl font-bold text-gray-900">12 min</p>
+                    <p class="text-sm text-gray-500">Average Daily Use</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Marriage is a journey.<br>
+                <span class="text-gray-400">Don't walk it alone.</span>
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                Between work, kids, and the chaos of modern life, spiritual connection with your spouse often becomes an afterthought.
+                You read Quran alone. Pray at different times. And slowly, the bond that brought you together starts to fade.
+            </p>
+            <p class="text-xl text-emerald-800 font-semibold mt-6">
+                Noor changes that.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-emerald-800 text-white rounded-full text-sm font-semibold mb-4">Simple & Meaningful</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">How Noor Works</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Three simple steps. Five minutes a day. A lifetime of spiritual connection.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-800 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                    <div class="bg-white p-8 pt-12 rounded-3xl shadow-sm border border-gray-100 card-hover h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center text-3xl mb-6">📖</div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Read Together</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Each day, you and your spouse receive the same 5 verses. Read at your own pace — morning coffee, lunch break, or before bed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-800 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                    <div class="bg-white p-8 pt-12 rounded-3xl shadow-sm border border-gray-100 card-hover h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center text-3xl mb-6">💭</div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Reflect Privately</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Answer a thoughtful prompt about the verses. Your reflection stays private until your spouse completes theirs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-800 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                    <div class="bg-white p-8 pt-12 rounded-3xl shadow-sm border border-gray-100 card-hover h-full">
+                        <div class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-2xl flex items-center justify-center text-3xl mb-6">💞</div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Connect Deeper</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Once both finish, reflections unlock. Discover your spouse's perspective. Start conversations that matter.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-600 text-sm">
+                    ✨ Your streak only counts when <strong>both</strong> partners read. It takes two.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-gray-900 text-white rounded-full text-sm font-semibold mb-4">Thoughtfully Designed</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Everything You Need.<br>Nothing You Don't.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature Cards -->
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-8 rounded-3xl border border-emerald-100 card-hover">
+                    <div class="text-4xl mb-4">🤲</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Shared Streaks</h3>
+                    <p class="text-gray-600">Your streak only grows when both partners read. Built-in accountability that strengthens your bond.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-amber-100/50 p-8 rounded-3xl border border-amber-100 card-hover">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Private Reflections</h3>
+                    <p class="text-gray-600">Share your thoughts in a safe space. Reflections unlock only after both partners complete theirs.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 p-8 rounded-3xl border border-blue-100 card-hover">
+                    <div class="text-4xl mb-4">🎤</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Voice Notes</h3>
+                    <p class="text-gray-600">Too busy to type? Record your thoughts. Sometimes a voice says more than words on a screen.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 p-8 rounded-3xl border border-purple-100 card-hover">
+                    <div class="text-4xl mb-4">📸</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Memory Moments</h3>
+                    <p class="text-gray-600">Attach photos to your reflections. Build a visual journal of your spiritual journey together.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 p-8 rounded-3xl border border-rose-100 card-hover">
+                    <div class="text-4xl mb-4">📅</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Gentle Reminders</h3>
+                    <p class="text-gray-600">Customizable notifications that nudge without nagging. We respect your time and attention.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100/50 p-8 rounded-3xl border border-teal-100 card-hover">
+                    <div class="text-4xl mb-4">☁️</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">iCloud Sync</h3>
+                    <p class="text-gray-600">Your data stays with Apple, not us. Private by design. Secure by default.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-emerald-800 text-white rounded-full text-sm font-semibold mb-4">Real Stories</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Couples Like You</h2>
+                <p class="mt-4 text-lg text-gray-600">Hear from couples who've transformed their spiritual connection.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="flex items-center gap-1 text-gold-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "We've been married 8 years and had never read Quran together. Noor made it so natural. Now it's our favorite part of the day."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold">A+F</div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Ahmed & Fatima</p>
+                            <p class="text-sm text-gray-500">Married 8 years • 156 day streak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="flex items-center gap-1 text-gold-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "The private reflections are genius. I learn something new about my husband's faith every single day. It's brought us so much closer."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white font-bold">S+M</div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Sara & Mohammed</p>
+                            <p class="text-sm text-gray-500">Newlyweds • 42 day streak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="flex items-center gap-1 text-gold-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "As busy parents of three, we struggled to find spiritual time together. 5 minutes with Noor is now sacred. The kids notice the difference."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold">Y+N</div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Yusuf & Nadia</p>
+                            <p class="text-sm text-gray-500">Parents of 3 • 89 day streak</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verse Highlight -->
+    <section class="py-24 bg-emerald-950 text-white relative overflow-hidden">
+        <div class="absolute inset-0 pattern-overlay opacity-30"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative">
+            <p class="font-arabic text-3xl sm:text-4xl leading-relaxed mb-6" dir="rtl">
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+            </p>
+            <p class="text-xl text-emerald-200 leading-relaxed max-w-2xl mx-auto mb-4">
+                "And of His signs is that He created for you from yourselves mates that you may find tranquility in them;
+                and He placed between you affection and mercy."
+            </p>
+            <p class="text-gold-300 font-semibold">— Surah Ar-Rum 30:21</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold mb-4">FAQ</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Common Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-900">
+                        Is Noor free?
+                        <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        Yes! Noor is free to download and use. The core experience — daily verses, shared streaks, and reflections — is completely free, forever.
+                        Sanctuary Premium ($4.99/month) unlocks beautiful themes, voice notes, photo memories, and more.
+                    </p>
+                </details>
+
+                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-900">
+                        What if my spouse doesn't have an iPhone?
+                        <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        Noor is currently iOS-only. We're working on Android! Join our waitlist to be notified when it launches.
+                        In the meantime, you can still use Noor solo to build your personal Quran habit.
+                    </p>
+                </details>
+
+                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-900">
+                        Is my data private?
+                        <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        Absolutely. Your reflections are stored in your personal iCloud account, not on our servers. We use Sign in with Apple for maximum privacy.
+                        We don't sell data, track your location, or share your information. Private by design.
+                    </p>
+                </details>
+
+                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-900">
+                        How do I invite my spouse?
+                        <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        After you sign up, you'll get a unique invite link to share with your spouse via text or WhatsApp.
+                        Once they join, you're automatically connected. It takes less than a minute.
+                    </p>
+                </details>
+
+                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-semibold text-gray-900">
+                        What translation do you use?
+                        <span class="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        We use the Sahih International translation by default, with Arabic text always displayed.
+                        The focus is on understanding and reflection, not scholarly study.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="download" class="py-24 cta-gradient text-white relative overflow-hidden">
+        <div class="absolute inset-0 pattern-overlay opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                Start Your Journey<br>Together.
+            </h2>
+            <p class="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+                Join thousands of Muslim couples growing closer to Allah — and each other — one verse at a time.
+            </p>
+
+            <a href="#"
+                class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-emerald-900 bg-white rounded-2xl hover:bg-emerald-50 transition-all shadow-xl mb-6">
+                <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.035 18.337c-.556.814-1.156 1.638-1.956 1.638-.79 0-1.077-.47-2.022-.47-.966 0-1.255.454-2.044.47-.845.016-1.467-.837-2.011-1.637-1.1-1.578-1.934-4.506-1.934-7.234 0-4.075 2.535-6.22 5.06-6.22 1.346 0 2.29.91 3.013.91.689 0 2.012-.955 3.39-.81 1.156.09 3.658 1.077 3.658 1.077s-.767 2.19-2.224 3.936c-1.345 1.6-2.5 3.514-2.5 5.56 0 1.956 1.256 3.524 1.256 3.524zm-4.047-15.688c.611-.745 1.023-1.78 1.023-2.65 0-.133-.011-.266-.033-.388-1.59.066-2.48.866-2.902 1.366-.467.545-.878 1.5-.878 2.457 0 .155.022.289.044.4 1.1-.09 1.978-.656 2.744-1.185z" />
+                </svg>
+                Download Free on App Store
+            </a>
+
+            <p class="text-emerald-200 text-sm">
+                Free forever. Sanctuary Premium available for $4.99/month.
+            </p>
+
+            <div class="flex justify-center items-center gap-6 mt-8 text-sm text-emerald-200">
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    No credit card required
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Setup in 2 minutes
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Private by design
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl">🌙</span>
+                        <span class="text-xl font-bold text-white">Noor</span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm leading-relaxed">
+                        The first daily Quran companion designed for Muslim couples.
+                        Growing closer to Allah, together.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition-colors">Stories</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="mailto:salam@trynoor.xyz" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm">© 2025 Noor App. Made with ❤️ for the Ummah.</p>
+                <p class="text-sm text-gray-500">Al-hamdulillah</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
